@@ -41,6 +41,7 @@ public class tstAlgo {
 		else {
 
 			if (name.length() == 1) {
+
 				current.isEnd = true;
 				return current;
 			}
@@ -51,6 +52,83 @@ public class tstAlgo {
 		return current;
 
 	}
+
+	// Find the last node via the name we are searching for
+	private tstNodes lastNode(String name) {
+
+		if (name.length() == 0) {
+			return root;
+		}
+
+		tstNodes currentNode = root;
+		int i = 0;
+
+		while (currentNode != null) {
+
+			if (name.charAt(i) == currentNode.data) {
+
+				if (i == name.length() - 1) {
+					return currentNode;
+				}
+
+				++i;
+				currentNode = currentNode.current;
+			} 
+			else if (name.charAt(i) < currentNode.data) {
+				currentNode = currentNode.prev;
+			} 
+			else {
+				currentNode = currentNode.next;
+			}
+
+		}
+
+		return null;
+
+	}
+
+	// function which autocompletes a given prefix
+	public ArrayList<String> autocomplete(String prefix) {
+
+		ArrayList<String> words = new ArrayList<String>();
+
+		if (prefix.length() == 0) {
+			inOrder(root, words, prefix);
+		}
+		else {
+
+			tstNodes node = lastNode(prefix);
+			if (node == null) {
+				return null;
+			}
+
+			if (node.isEnd == true) {
+				words.add(prefix);
+			}
+			inOrder(node.current, words, prefix);
+		}
+		return words;
+
+	}
+
+	// Recursively adds the nodes in order and stores in arraylist
+	private void inOrder(tstNodes current, ArrayList<String> words, String name) {
+
+		if (current == null) {
+			return;
+		}
+
+		inOrder(current.prev, words, name);
+		if (current.isEnd == true) {
+			words.add(name + current.data);
+		}
+
+		inOrder(current.current, words, name + current.data);
+		inOrder(current.next, words, name);
+
+	}
+
+
 
 
 }
