@@ -73,6 +73,7 @@ public class tstAlgo {
 
 				++i;
 				currentNode = currentNode.current;
+				
 			} 
 			else if (name.charAt(i) < currentNode.data) {
 				currentNode = currentNode.prev;
