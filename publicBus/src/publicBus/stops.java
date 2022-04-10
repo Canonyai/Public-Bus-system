@@ -112,7 +112,7 @@ public class stops {
 			return "" + this.stop_code;
 		}
 	}
-	
+
 	public String getLatitude() {
 		if (stop_lat == -1) {
 			return "unavailable";

@@ -12,7 +12,7 @@ public class transfer {
 
 	public transfer(String line) {
 
-		// split lines into individual parameters.
+		// split lines into individual parameters
 		String[] input = line.split(",");
 
 		// assign the data to variables

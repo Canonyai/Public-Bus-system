@@ -3,7 +3,7 @@ import java.time.LocalTime;
 
 public class stopTimes {
 
-	// data stored within stop_times.txt include:
+	// data stored within stop_times.txt
 	private int tripId;
 
 	private LocalTime arrivalTime;

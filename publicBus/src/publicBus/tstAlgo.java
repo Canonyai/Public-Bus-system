@@ -53,7 +53,7 @@ public class tstAlgo {
 
 	}
 
-	// Find the last node via the name we are searching for
+	// find the last node via the name we are searching for
 	private tstNodes lastNode(String name) {
 
 		if (name.length() == 0) {
@@ -112,7 +112,7 @@ public class tstAlgo {
 
 	}
 
-	// Recursively adds the nodes in order and stores in arraylist
+	// recursively adds the nodes in order and stores in arraylist
 	private void inOrder(tstNodes current, ArrayList<String> words, String name) {
 
 		if (current == null) {
