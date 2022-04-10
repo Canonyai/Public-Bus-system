@@ -5,11 +5,8 @@ public class tstAlgo {
 
 	private tstNodes root;
 
-	// set the root of the TST to null when we create the TST
 	public tstAlgo() {
-
 		root = null;
-
 	}
 
 	// add nodes to the TST, based on the name of stops
@@ -88,7 +85,7 @@ public class tstAlgo {
 
 	}
 
-	// function which autocompletes a given prefix
+	// function which auto-completes a given prefix
 	public ArrayList<String> autocomplete(String prefix) {
 
 		ArrayList<String> words = new ArrayList<String>();
@@ -120,6 +117,7 @@ public class tstAlgo {
 		}
 
 		inOrder(current.prev, words, name);
+		
 		if (current.isEnd == true) {
 			words.add(name + current.data);
 		}
